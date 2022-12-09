@@ -1,2 +1,2 @@
 #include<stdio.h>
-unsigned short int n
+unsigned short int n;
