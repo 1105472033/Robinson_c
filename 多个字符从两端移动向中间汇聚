@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<windows.h>
+
+int main()
+{
+	int i = 0;
+	int j = 0;
+	int len = 0;
+	char arr1[] = {"hello,,world"};
+	unsigned short cishu = 0;
+	len = sizeof(arr1)/sizeof(arr1[0]) - 2;
+	if(len %2==0)
+	{
+		cishu = len/2;
+	}
+	else
+	{
+		cishu = len/2+1;
+	}
+	for(i=0;i<=cishu;i++)
+	{
+		for(j=0;j<=len;j++)
+		{
+			if(j == len)
+			{
+				printf("%c\n",arr1[len]);    ///单个字符输出只能用%c,字符串输出用%s
+				Sleep(1000);
+			}
+			else if((j<=i) || (j>=(len-i)))
+			{
+				printf("%c",arr1[j]);    ///单个字符输出只能用%c,字符串输出用%s
+			}
+			else
+			{
+				printf("*");    ///单个字符输出只能用%c,字符串输出用%s
+			}
+		}
+		if(i != cishu)
+		{
+			system("cls");
+		}
+	}
+	return 0;
+}
