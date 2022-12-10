@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<string.h>
+#include<Windows.h>
+
+int main()
+{
+	int i=0;
+	int try_time = 3;
+	char password[20] = {0};
+	char input_word;
+	for(i=0;i<try_time;i++)
+	{
+		system("cls");
+		printf("请输入密码\n");
+		scanf("%s",password);
+		if(strcmp(password,"123456") == 0)
+		{
+			printf("登录成功！");
+			Sleep(1000);
+			break;
+		}
+		else
+		{
+			printf("密码错误，请重新输入，你还剩%d次机会，否则账户会锁定",(try_time-1-i));
+			Sleep(1000);
+		}
+		if(i== (try_time-1))
+		{
+			printf("密码已错误%d次，账户锁定",(try_time));
+		}
+	}
+	return 0;
+}
